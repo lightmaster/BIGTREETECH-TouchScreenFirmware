@@ -34,7 +34,7 @@
  *
  * Options: [2400: 0, 9600: 1, 19200: 2, 38400: 3, 57600: 4, 115200: 5, 250000: 6, 500000: 7, 1000000: 8]
  */
-#define BAUDRATE 5  // Default: 5
+#define BAUDRATE 6  // Default: 5
 
 /**
  * Default Primary Language (for Touch-Mode only)
@@ -59,7 +59,7 @@
  */
 #define TITLE_BACKGROUND_COLOR      1  // Title background color (Default: 1)
 #define BACKGROUND_COLOR            1  // Background color (Default: 1)
-#define FONT_COLOR                  0  // Font foreground color (Default: 0)
+#define FONT_COLOR                  3  // Font foreground color (Default: 0)
 #define REMINDER_FONT_COLOR         2  // Reminder font color, such as: "No print attached", "Busy processing", etc. (Default: 2)
 #define VOLUME_REMINDER_FONT_COLOR  5  // Volume reminder font color, such as: "Card inserted", "Card removed" (Default: 5)
 #define STATUS_XYZ_BG_COLOR        15  // Background color for X Y Z position display in Status Screen. (Default: 15)
@@ -68,7 +68,7 @@
 
 // Mesh Leveling Display Colors
 // Set the colors used for drawing the mesh with the minimun and maximum value in the grid.
-#define MESH_MIN_COLOR 7  // Default: 7
+#define MESH_MIN_COLOR 5  // Default: 7
 #define MESH_MAX_COLOR 2  // Default: 2
 
 //===========================================================================
@@ -93,7 +93,7 @@
  *          12: DARKBLUE,  13: DARKGREEN,  14: GRAY,    15: DARKGRAY
  */
 #define MARLIN_BKCOLOR 1  // Default: 1
-#define MARLIN_FNCOLOR 0  // Default: 0
+#define MARLIN_FNCOLOR 3  // Default: 0
 
 // Text displayed at the top of the TFT in Marlin Mode
 #define MARLIN_BANNER_TEXT "Marlin Mode"  // Default: "Marlin Mode"
@@ -107,7 +107,7 @@
  * Options: 0: Disabled (RECOMMENDED FOR TFT24)
  *          1: Enabled
  */
-#define MARLIN_MODE_FULLSCREEN 0  // Default: 0
+#define MARLIN_MODE_FULLSCREEN 1  // Default: 0
 
 /**
  * Keep Serial always On (ONLY SUPPORTED ON TFT24 V1.1, TFT35 V3.0, AND TFT28 V3.0)
@@ -117,7 +117,7 @@
  *
  * Options: [0: Disabled, 1: Enabled]
  */
-#define SERIAL_ALWAYS_ON 0  // Default: 0
+#define SERIAL_ALWAYS_ON 1  // Default: 0
 
 /**
  * LCD/Touch Encoder
@@ -137,11 +137,11 @@
 #define MIXING_EXTRUDER 0  // Default: 0. For mixing_extruder set to 1 (This option turns off autodetection
                            // of the number of extruders)
 
-#define PREHEAT_LABELS   {"PLA", "PETG", "ABS", "WOOD", "TPU", "NYLON"}
-#define PREHEAT_HOTEND   {200,   240,    230,   170,    220,   250}
-#define PREHEAT_BED      {60,    70,     90,    50,     50,    90}
+#define PREHEAT_LABELS   {"PLA - Volcano", "PLA - Silk", "PLA - Galaxy", "PLA - Easyfill", "PLA - Pro", "ABS"}
+#define PREHEAT_HOTEND   {235,             230,           230,           220,              225,         245  }
+#define PREHEAT_BED      { 70,              70,            70,            70,              70,           80  }
 
-#define HEAT_MAX_TEMP    {275,       275,       275,       275,       275,       275,       150,    60}
+#define HEAT_MAX_TEMP    {280,       275,       275,       275,       275,       275,       150,    60}
 #define HEAT_SIGN_ID     {"T0:",     "T1:",     "T2:",     "T3:",     "T4:",     "T5:",     "B:",   "C:"}
 #define HEAT_DISPLAY_ID  {"T0",      "T1",      "T2",      "T3",      "T4",      "T5",      "Bed",  "Chamber"}
 #define HEAT_CMD         {"M104 T0", "M104 T1", "M104 T2", "M104 T3", "M104 T4", "M104 T5", "M140", "M141"};
@@ -151,7 +151,7 @@
 #define EXTRUDER_ID      {"E0",   "E1",      "E2",      "E3",      "E4",      "E5"}
 
 // Prevent extrusion if the temperature is below set temperature
-#define PREVENT_COLD_EXTRUSION_MINTEMP 180
+#define PREVENT_COLD_EXTRUSION_MINTEMP 170
 
 /**
  * Fan control & Fan type Options:
@@ -174,25 +174,25 @@
 // Default X & Y speed (mm/min)
 #define SPEED_XY_SLOW   1000
 #define SPEED_XY_NORMAL 3000
-#define SPEED_XY_FAST   5000
+#define SPEED_XY_FAST   10000
 
 // Default Z speed (mm/min)
 #define SPEED_Z_SLOW   500
-#define SPEED_Z_NORMAL 1000
-#define SPEED_Z_FAST   2000
+#define SPEED_Z_NORMAL 1500
+#define SPEED_Z_FAST   3000
 
 // Extrude speed (mm/min)
-#define EXTRUDE_SLOW_SPEED     60
+#define EXTRUDE_SLOW_SPEED    100
 #define EXTRUDE_NORMAL_SPEED  600
-#define EXTRUDE_FAST_SPEED   1200
+#define EXTRUDE_FAST_SPEED   2400
 
 // Size of machine
-#define X_MIN_POS   0
-#define Y_MIN_POS   0
+#define X_MIN_POS   -100
+#define Y_MIN_POS   -100
 #define Z_MIN_POS   0
-#define X_MAX_POS 235
-#define Y_MAX_POS 235
-#define Z_MAX_POS 250
+#define X_MAX_POS   100
+#define Y_MAX_POS   100
+#define Z_MAX_POS   200
 
 /**
  * Raised Z height for probing
@@ -205,12 +205,12 @@
 // Pause Settings
 #define NOZZLE_PAUSE_RETRACT_LENGTH               15  // (mm)
 #define NOZZLE_RESUME_PURGE_LENGTH                16  // (mm)
-#define NOZZLE_PAUSE_X_POSITION     (X_MIN_POS + 10)  // (mm) Must be an integer
-#define NOZZLE_PAUSE_Y_POSITION     (Y_MIN_POS + 10)  // (mm) Must be an integer
+#define NOZZLE_PAUSE_X_POSITION                  -70  // (mm) Must be an integer
+#define NOZZLE_PAUSE_Y_POSITION                   70  // (mm) Must be an integer
 #define NOZZLE_PAUSE_Z_RAISE                      20  // (mm)
-#define NOZZLE_PAUSE_E_FEEDRATE                  600  // (mm/min) retract & purge feedrate
-#define NOZZLE_PAUSE_XY_FEEDRATE                6000  // (mm/min) X and Y axes feedrate
-#define NOZZLE_PAUSE_Z_FEEDRATE                  600  // (mm/min) Z axis feedrate
+#define NOZZLE_PAUSE_E_FEEDRATE              (70*60)  // (mm/min) retract & purge feedrate
+#define NOZZLE_PAUSE_XY_FEEDRATE            (100*60)  // (mm/min) X and Y axes feedrate
+#define NOZZLE_PAUSE_Z_FEEDRATE             (100*60)  // (mm/min) Z axis feedrate
 
 /**
  * Manual Leveling
@@ -233,9 +233,9 @@
 #define Z_FADE_DEFAULT_VALUE 10.0f
 
 // Probe Offset limits
-#define PROBE_Z_OFFSET_MIN_VALUE     -20.0f
-#define PROBE_Z_OFFSET_MAX_VALUE      20.0f
-#define PROBE_Z_OFFSET_DEFAULT_VALUE   0.0f
+#define PROBE_Z_OFFSET_MIN_VALUE      -32.0f
+#define PROBE_Z_OFFSET_MAX_VALUE       32.0f
+#define PROBE_Z_OFFSET_DEFAULT_VALUE  -16.26500f
 
 // Home Offset limits
 #define HOME_Z_OFFSET_MIN_VALUE     -20.0f
@@ -295,7 +295,7 @@
 #define AUTO_SAVE_LOAD_BL_VALUE 1  // Default: 1
 
 // PID autotune
-#define PID_CMD {"M303 U1 C8 E0", "M303 U1 C8 E1", "M303 U1 C8 E2", "M303 U1 C8 E3", "M303 U1 C8 E4", "M303 U1 C8 E5", "M303 U1 C8 E-1", ""};
+#define PID_CMD {"M303 U1 C10 S220 E0", "M303 U1 C8 E1", "M303 U1 C8 E2", "M303 U1 C8 E3", "M303 U1 C8 E4", "M303 U1 C8 E5", "M303 U1 C10 S60 E-1", ""};
 #define PID_PROCESS_TIMEOUT (15 * 60000)  // (MilliSeconds, 1 minute = 60000 MilliSeconds)
 
 /**
@@ -329,7 +329,7 @@
 #define SHOW_BTT_BOOTSCREEN
 
 // Bootscreen logo time in ms
-#define BTT_BOOTSCREEN_TIME 3000
+#define BTT_BOOTSCREEN_TIME 2000
 
 // Enable alternative Move Menu Buttons Layout matching the direction of actual printer axis
 // Update the icons from alternate icon folder.
@@ -356,7 +356,7 @@
  *          3: LED_ORANGE,  4: LED_YELLOW,  5: LED_GREEN,
  *          6: LED_BLUE,    7: LED_INDIGO,  8: LED_VIOLET
 */
-#define STARTUP_KNOB_LED_COLOR 1  // Default: 1
+#define STARTUP_KNOB_LED_COLOR 8  // Default: 1
 
 // Keep the LED state in Marlin Mode
 #define KEEP_KNOB_LED_COLOR_MARLIN_MODE
@@ -369,7 +369,7 @@
  *          6: 50 Percent,   7: 60 Percent,   8: 70 Percent,
  *          9: 80 Percent,  10: 90 Percent,  11: 100 Percent
  */
-#define DEFAULT_LCD_BRIGHTNESS       11  // Default: 11
+#define DEFAULT_LCD_BRIGHTNESS       9  // Default: 11
 #define DEFAULT_LCD_IDLE_BRIGHTNESS   3  // Default: 3
 
 /**
@@ -381,7 +381,7 @@
  *          3: 30 Seconds,   4: 60 Seconds,     5: 120 Seconds,
  *          6: 300 Seconds,  7: CUSTOM Seconds
  */
-#define DEFAULT_LCD_IDLE_TIMER  0  // Default: 0
+#define DEFAULT_LCD_IDLE_TIMER  5  // Default: 0
 #define LCD_DIM_CUSTOM_SECONDS (10 * 60)  // Custom value in seconds. This will be used if DEFAULT_LCD_IDLE_TIMER
                                           // is set to 7 (CUSTOM Seconds).
 
@@ -499,7 +499,7 @@
 //
 
 // Home before power loss recovery
-#define HOME_BEFORE_PLR false  // To enabled: true | To disabled: false (Default: false)
+#define HOME_BEFORE_PLR true  // To enabled: true | To disabled: false (Default: false)
 
 // Backup power / UPS to move Z axis on power loss
 #define BTT_MINI_UPS false  // To enabled: true | To disabled: false (Default: false)
@@ -524,26 +524,26 @@
  * CUSTOM_X_LABEL is the name of the custom button, CUSTOM_X_GCODE is the G-code to be sent by the custom button,
  * this should always end with a New-Line character '\n'.
  */
-#define CUSTOM_0_LABEL "Disable Steppers"
-#define CUSTOM_0_GCODE "M84\n"
-#define CUSTOM_1_LABEL "Init SD Card"
-#define CUSTOM_1_GCODE "M21\n"
-#define CUSTOM_2_LABEL "Release SD Card"
-#define CUSTOM_2_GCODE "M22\n"
-#define CUSTOM_3_LABEL "Enable Leveling State"
-#define CUSTOM_3_GCODE "M420 S1\n"
-#define CUSTOM_4_LABEL "Save to EEPROM"
-#define CUSTOM_4_GCODE "M500\n"
-#define CUSTOM_5_LABEL "Restore from EEPROM"
-#define CUSTOM_5_GCODE "M501\n"
-#define CUSTOM_6_LABEL "EEPROM Defaults"
-#define CUSTOM_6_GCODE "M502\n"
-//#define CUSTOM_7_LABEL "Custom7"
-//#define CUSTOM_7_GCODE "M105\n"
-//#define CUSTOM_8_LABEL "Custom8"
-//#define CUSTOM_8_GCODE "M105\n"
-//#define CUSTOM_9_LABEL "Custom9"
-//#define CUSTOM_9_GCODE "M105\n"
+#define CUSTOM_0_LABEL "Retract Filament"
+#define CUSTOM_0_GCODE "M83\nG1 E-4 F1500\n"
+#define CUSTOM_1_LABEL "Dim Lights"
+#define CUSTOM_1_GCODE "M150 R255 U255 B255 P7\n"
+#define CUSTOM_2_LABEL "Bright Lights"
+#define CUSTOM_2_GCODE "M150 R255 U255 B255 P255\n"
+#define CUSTOM_3_LABEL "Disable Steppers"
+#define CUSTOM_3_GCODE "M84\n"
+#define CUSTOM_4_LABEL "Init SD Card"
+#define CUSTOM_4_GCODE "M21\n"
+#define CUSTOM_5_LABEL "Release SD Card"
+#define CUSTOM_5_GCODE "M22\n"
+#define CUSTOM_6_LABEL "Enable Leveling State"
+#define CUSTOM_6_GCODE "M420 S1\n"
+#define CUSTOM_7_LABEL "Save to EEPROM"
+#define CUSTOM_7_GCODE "M500\n"
+#define CUSTOM_8_LABEL "Restore from EEPROM"
+#define CUSTOM_8_GCODE "M501\n"
+#define CUSTOM_9_LABEL "EEPROM Defaults"
+#define CUSTOM_9_GCODE "M502\n"
 //#define CUSTOM_10_LABEL "Custom10"
 //#define CUSTOM_10_GCODE "M105\n"
 //#define CUSTOM_11_LABEL "Custom11"
@@ -562,13 +562,13 @@
  * Enable Start & End G-code in SETTINGS -> FEATURE menu.
  */
 // Start G-code - run this G-code before starting print
-#define PRINT_START_GCODE "G28 XY R10\n"  // Raise Z 10mm before homing X & Y
+#define PRINT_START_GCODE "G28\n"  // Raise Z 10mm before homing X & Y
 
 // End G-code - run this G-code after finishing print
-#define PRINT_END_GCODE "G90\nG1 E-4\nG92 E0\nM18\n"  // Switch to absolute positioning, reduce filament pressure by
+#define PRINT_END_GCODE "M104 S0\nM140 S0\nG90\nG92 E0\nG1 E-4\nG92 E0\nG28\nM18\n"  // Switch to absolute positioning, reduce filament pressure by
                                                       // performing small retract, reset extruder position, disable steppers
 
 // Cancel G-code - run this G-code after canceling print
-#define PRINT_CANCEL_GCODE "M104 S0\nM140 S0\nG28 XY R10\nM107\nM18\n"  // Home XY and raise Z 10mm
+#define PRINT_CANCEL_GCODE "M104 S0\nM140 S0\nG90\nG92 E0\nG1 E-4\nG92 E0\nG28\nM18\n"  // Home XY and raise Z 10mm
 
 #endif
