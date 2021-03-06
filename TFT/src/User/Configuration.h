@@ -137,9 +137,9 @@
 #define MIXING_EXTRUDER 0  // Default: 0. For mixing_extruder set to 1 (This option turns off autodetection
                            // of the number of extruders)
 
-#define PREHEAT_LABELS   {"PLA - Volcano", "PLA - Silk", "PLA - Galaxy", "PLA - Easyfill", "PLA - Pro", "ABS"}
-#define PREHEAT_HOTEND   {235,             230,           230,           220,              225,         245  }
-#define PREHEAT_BED      { 70,              70,            70,            70,              70,           80  }
+#define PREHEAT_LABELS   {"Volcano", "Silk", "Galaxy", "ApolloX", "Pro-PLA", "ABS"}
+#define PREHEAT_HOTEND   {235,       230,    220,      240,        225,       245  }
+#define PREHEAT_BED      { 70,        70,     70,       90,         70,        80  }
 
 #define HEAT_MAX_TEMP    {280,       275,       275,       275,       275,       275,       150,    60}
 #define HEAT_SIGN_ID     {"T0:",     "T1:",     "T2:",     "T3:",     "T4:",     "T5:",     "B:",   "C:"}
@@ -235,7 +235,7 @@
 // Probe Offset limits
 #define PROBE_Z_OFFSET_MIN_VALUE      -32.0f
 #define PROBE_Z_OFFSET_MAX_VALUE       32.0f
-#define PROBE_Z_OFFSET_DEFAULT_VALUE  -16.26500f
+#define PROBE_Z_OFFSET_DEFAULT_VALUE  -16.7700f
 
 // Home Offset limits
 #define HOME_Z_OFFSET_MIN_VALUE     -20.0f
@@ -530,24 +530,24 @@
 #define CUSTOM_1_GCODE "M150 R255 U255 B255 P7\n"
 #define CUSTOM_2_LABEL "Bright Lights"
 #define CUSTOM_2_GCODE "M150 R255 U255 B255 P255\n"
-#define CUSTOM_3_LABEL "Disable Steppers"
-#define CUSTOM_3_GCODE "M84\n"
-#define CUSTOM_4_LABEL "Init SD Card"
-#define CUSTOM_4_GCODE "M21\n"
-#define CUSTOM_5_LABEL "Release SD Card"
-#define CUSTOM_5_GCODE "M22\n"
-#define CUSTOM_6_LABEL "Enable Leveling State"
-#define CUSTOM_6_GCODE "M420 S1\n"
-#define CUSTOM_7_LABEL "Save to EEPROM"
-#define CUSTOM_7_GCODE "M500\n"
-#define CUSTOM_8_LABEL "Restore from EEPROM"
-#define CUSTOM_8_GCODE "M501\n"
-#define CUSTOM_9_LABEL "EEPROM Defaults"
-#define CUSTOM_9_GCODE "M502\n"
-//#define CUSTOM_10_LABEL "Custom10"
-//#define CUSTOM_10_GCODE "M105\n"
-//#define CUSTOM_11_LABEL "Custom11"
-//#define CUSTOM_11_GCODE "M105\n"
+#define CUSTOM_3_LABEL "Enable Softstops"
+#define CUSTOM_3_GCODE "M211 S1\nM117 Enabled Softstops\n"
+#define CUSTOM_4_LABEL "Disable Softstops"
+#define CUSTOM_4_GCODE "M211 S0\nM117 Disabled Softstops\n"
+#define CUSTOM_5_LABEL "Disable Steppers"
+#define CUSTOM_5_GCODE "M84\n"
+#define CUSTOM_6_LABEL "Init SD Card"
+#define CUSTOM_6_GCODE "M21\n"
+#define CUSTOM_7_LABEL "Release SD Card"
+#define CUSTOM_7_GCODE "M22\n"
+#define CUSTOM_8_LABEL "Enable Leveling State"
+#define CUSTOM_8_GCODE "M420 S1\n"
+#define CUSTOM_9_LABEL "Save to EEPROM"
+#define CUSTOM_9_GCODE "M500\n"
+#define CUSTOM_10_LABEL "Restore from EEPROM"
+#define CUSTOM_10_GCODE "M501\n"
+#define CUSTOM_11_LABEL "EEPROM Defaults"
+#define CUSTOM_11_GCODE "M502\n"
 //#define CUSTOM_12_LABEL "Custom12"
 //#define CUSTOM_12_GCODE "M105\n"
 //#define CUSTOM_13_LABEL "Custom13"
