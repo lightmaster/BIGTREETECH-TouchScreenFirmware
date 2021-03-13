@@ -194,9 +194,13 @@
 #define Y_MAX_POS   100
 #define Z_MAX_POS   200
 
-// Is this a Delta printer
-#define IS_DELTA             true
-#define DELTA_MBL_Z_DROP_MM  50 // MBL Drop 50mm first after home avoid crashing into the top of the towers.
+/**
+ * Raised Z height for probing
+ * Z height to raise / drop after homing (G28) before starting to probe a point.
+ *
+ * WARNING: It MUST be negative (e.g. -50mm) for a Delta printer to avoid crashing into the top of the tower.
+ */
+#define PROBING_Z_RAISE -50.0f
 
 // Pause Settings
 #define NOZZLE_PAUSE_RETRACT_LENGTH               15  // (mm)
