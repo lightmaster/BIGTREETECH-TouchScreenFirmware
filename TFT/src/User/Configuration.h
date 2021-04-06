@@ -255,7 +255,7 @@
  * Set the time interval to poll SD Printing status if Marlin reports M27 AutoReport as disabled.
  */
 #define M27_REFRESH             3     // Time in sec for M27 command
-#define M27_WATCH_OTHER_SOURCES true  // if true the polling on M27 report is always active. Case: SD print
+#define M27_WATCH_OTHER_SOURCES false  // if true the polling on M27 report is always active. Case: SD print
                                       // started not from TFT35
 
 /**
