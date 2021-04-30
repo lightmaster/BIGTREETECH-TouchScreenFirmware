@@ -235,7 +235,7 @@
 // Probe Offset limits
 #define PROBE_Z_OFFSET_MIN_VALUE      -32.0f
 #define PROBE_Z_OFFSET_MAX_VALUE       32.0f
-#define PROBE_Z_OFFSET_DEFAULT_VALUE  -16.7700f
+#define PROBE_Z_OFFSET_DEFAULT_VALUE  -16.2600f
 
 // Home Offset limits
 #define HOME_Z_OFFSET_MIN_VALUE     -20.0f
@@ -304,7 +304,7 @@
  *
  * NOTE: Enable it, in case Marlin firmware does not properly support M600 on the mainboard.
  */
-#define EMULATE_M600 true  // To enabled: true | To disabled: false (Default: true)
+#define EMULATE_M600 false  // To enabled: true | To disabled: false (Default: true)
 
 /**
  * M601 ; pause print
